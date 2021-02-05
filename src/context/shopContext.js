@@ -10,7 +10,6 @@ const client = Client.buildClient({
 
 
 
-
 class ShopProvider extends Component {
 
     state = {
