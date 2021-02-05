@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Client from 'shopify-buy'
 
-// 2.Basic Setup Complete
 
 const ShopContext = React.createContext();
 
@@ -44,12 +43,22 @@ class ShopProvider extends Component {
             })
     }
 
-    addItemtoCheckout = async () => {
+    addItemToCheckout = async (variantId, quantity) => {
+        const lineItemsToAdd = [
+            {
+                variantId: variantId,
+                quantity: parseInt(quantity, 10)
+            }
+        ]
+        const checkout = await client.checkout.addLineItems(this.state.checkout.id, lineItemsToAdd)
+        this.setState({ checkout: checkout })
 
+        this.openCart();
     }
 
     removeLineItem = async (LineItemIdsRemove) => {
-
+        const checkout = await client.checkout.removeLineItems(this.state.checkout.id, LineItemIdsRemove)
+        this.setState({ checkout: checkout })
     }
 
     fetchAllProducts = async () => {
@@ -62,9 +71,9 @@ class ShopProvider extends Component {
         this.setState({ product: product })
     }
 
-    closeCart = () => { }
+    closeCart = () => { this.setState({ isCartOpen: false }) }
 
-    openCart = () => { }
+    openCart = () => { this.setState({ isCartOpen: true }) }
 
     closeMenu = () => { }
 
@@ -78,7 +87,7 @@ class ShopProvider extends Component {
                 ...this.state,
                 fetchAllProducts: this.fetchAllProducts,
                 fetchProductWithHandle: this.fetchProductWithHandle,
-                addItemtoCheckout: this.addItemtoCheckout,
+                addItemToCheckout: this.addItemToCheckout,
                 removeLineItem: this.removeLineItem,
                 closeCart: this.closeCart,
                 openCart: this.openCart,
@@ -97,3 +106,4 @@ const ShopConsumer = ShopContext.Consumer
 export { ShopConsumer, ShopContext }
 
 export default ShopProvider
+

@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-// 2.Basic Setup Complete
-
+import NavBar from './components/NavBar';
+import Cart from './components/Cart'
 
 import Home from './pages/Home'
 import ProductPage from './pages/ProductPage'
@@ -10,7 +9,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <p>Navigation</p>
+        <NavBar />
+        <Cart />
         <Switch>
           <Route path="/products/:handle">
             <ProductPage />
