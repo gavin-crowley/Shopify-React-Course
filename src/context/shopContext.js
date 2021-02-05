@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Client from 'shopify-buy'
 
+// 2.Basic Setup Complete
+
 const ShopContext = React.createContext();
 
 const client = Client.buildClient({

@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+// 2.Basic Setup Complete
+
+
 import Home from './pages/Home'
 import ProductPage from './pages/ProductPage'
 

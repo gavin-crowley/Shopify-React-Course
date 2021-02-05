@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+// 2.Basic Setup Complete
+
+
 import { ShopContext } from '../context/shopContext'
 
 const Home = () => {

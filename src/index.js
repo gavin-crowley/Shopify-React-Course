@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ShopProvider from './context/shopContext'
 
+// 2.Basic Setup Complete
+
+
 ReactDOM.render(
   <React.StrictMode>
     <ShopProvider>
@@ -18,3 +21,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+

@@ -1,6 +1,9 @@
 import React, { useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
+// 2.Basic Setup Complete
+
+
 import { ShopContext } from '../context/shopContext'
 
 const ProductPage = () => {
